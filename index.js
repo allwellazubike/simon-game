@@ -1,3 +1,6 @@
+
+alert("Welcome to the Simon Game!\n\nWatch the sequence of colors, then repeat it by tapping the buttons in the same order. The sequence gets longer each round. Make a mistake, and the game is over!\n\nTap anywhere to start.");
+
 //button array list
 var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
