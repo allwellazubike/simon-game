@@ -33,13 +33,14 @@ var level = 0;
 
 // calls the nextsequence when the keyboard is pressed 
 var started = false;
-$(document).keydown(function(event) {
+$(document).one("keydown touchstart", function() {
     if (!started) {
-        setTimeout(nextSequence, 700); //wastes 0.7 seconds before the sequence is called 
-        console.log("Key pressed down! Key code: " + event.key);
+        setTimeout(nextSequence, 700);
         started = true;
+        console.log("Game started");
     }
 });
+
 
 // this function creates the flashing animation for the "color"
 function flashbutton(color) {
