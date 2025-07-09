@@ -1,0 +1,173 @@
+/* body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+} */
+
+
+
+/* Body setup */
+body {
+  background-color: #222; /* Dark background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: #eee;
+  user-select: none;
+}
+
+.welcome {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #fef2bf;
+  text-align: center;
+  margin: 20px 0 10px 0;
+  animation: pulse 2.5s ease-in-out infinite alternate;
+  transform-origin: center; /* keep scale centered */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+    text-shadow: 0 0 5px #fef2bf;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.02); /* smaller scale */
+    text-shadow: 0 0 15px #fff;
+  }
+}
+
+
+/* Title styling */
+#level-title {
+  position: absolute;
+  top: 30px;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Container to hold the 4 buttons in a circle */
+.container {
+  position: relative;
+  width: 90vw;       /* 90% of viewport width */
+  max-width: 350px;  /* max size on larger screens */
+  height: 90vw;      /* keep it square */
+  max-height: 350px;
+  margin: 40px auto; /* center and spacing */
+}
+
+.btn {
+  width: 40vw;       /* 40% of viewport width */
+  max-width: 160px;  /* max size */
+  height: 40vw;      /* keep it square */
+  max-height: 160px;
+  border: 3px solid black;
+  position: absolute;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+
+/* Top-left quarter */
+#green {
+  top: 0;
+  left: 0;
+  background-color: #6ab04c; /* softer green */
+  border-top-left-radius: 100% 100%;
+  /* add spacing */
+  margin: 8px 4px 4px 8px;
+}
+
+/* Top-right quarter */
+#red {
+  top: 0;
+  right: 0;
+  background-color: #eb4d4b; /* soft red */
+  border-top-right-radius: 100% 100%;
+  margin: 8px 8px 4px 4px;
+}
+
+/* Bottom-left quarter */
+#yellow {
+  bottom: 0;
+  left: 0;
+  background-color: #f9ca24; /* soft yellow */
+  border-bottom-left-radius: 100% 100%;
+  margin: 4px 4px 8px 8px;
+}
+
+/* Bottom-right quarter */
+#blue {
+  bottom: 0;
+  right: 0;
+  background-color: #22a6b3; /* soft blue */
+  border-bottom-right-radius: 100% 100%;
+  margin: 4px 8px 8px 4px;
+}
+
+/* Pressed effect: slightly darker & glowing */
+.pressed {
+  filter: brightness(85%);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Game over background effect */
+.game-over {
+  background-color: #eb4d4b !important;
+  opacity: 0.8;
+}
