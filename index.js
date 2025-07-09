@@ -58,7 +58,9 @@ function playSound(name) {
 
 //adds an event listener to all buttons and takes
 // the color of the button and stores it in a var
-$(".btn").click(function() { 
+$(".btn").on("touchstart mousedown", function (e) {
+  e.preventDefault(); // Prevent mobile delay and ghost click
+
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
   checkAnswer(userClickedPattern.length - 1);
@@ -66,6 +68,7 @@ $(".btn").click(function() {
   playSound(userChosenColour);
   flashbutton(userChosenColour);
 });
+
 
 
 function checkAnswer(currentLevel) {
